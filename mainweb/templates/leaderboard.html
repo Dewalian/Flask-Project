@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/leader.css') }}">
+{% endblock %}
+{% block title %} Leaderboard {% endblock %}
+{% block content %}
+    <div class="leader">
+        <h2>LEADERBOARD</h2>
+        <table>
+            <tr>
+                <th class="rank">Rank</th>
+                <th>Username</th>
+                <th>CPS</th>
+            </tr>
+            {% for x, y in rank_number %}
+            <tr>
+                <td class="rank">{{ y }}</td>
+                <td>{{ x.username }}</td>
+                <td>{{ x.highscore }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

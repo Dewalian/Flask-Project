@@ -1,0 +1,85 @@
+body {
+    background-color: rgb(109, 109, 109);
+}
+
+*, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* alertbar */
+div.alert {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    border-top: 2px solid darkgray;
+}
+
+div.alert p {
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.alert button {
+    border: none;
+    position: absolute;
+    height: 30px;
+    right: 5px;
+}
+
+div.alert button p {
+    font-weight: bolder;
+    font-size: large;
+}
+
+div.alert button p:hover {
+    color: darkgrey;
+}
+
+div.alert button p:active {
+    color: black;
+}
+
+div.alert-danger, button.close-danger {
+    background-color: rgb(197, 70, 70);
+}
+
+div.alert-success, button.close-success {
+    background-color: rgb(50, 182, 50);
+}
+
+/* navbar */
+div.navbar:not(.title) {
+    background-color: lightgray;
+    overflow: hidden;
+}
+ 
+div.navbar ul {list-style: none;}
+ 
+div.navbar ul li {
+    float: left;
+    padding: 20px 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ 
+div.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+ 
+div.navbar ul li:hover:not(.title) {background-color: gray;}
+ 
+div.navbar ul li:active:not(.title) {background-color: lightgray;}
+ 
+div.navbar ul li.right {float: right;}
+
+ 
+div.navbar li.title {
+    float: left;
+    font-size: 2em;
+    background-color: #393938;
+    color: #f0f0f0;
+    padding: 10px 20px 11px 20px;
+}

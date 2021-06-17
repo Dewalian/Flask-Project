@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block css %} {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li class="title">Clickr</li>
+            <li><a href="{{ url_for('home_page') }}">Home</a></li>
+            <li><a href="{{ url_for('leaderboard_page')}}">Leaderboard</a></li>
+            {% if "user" in session %}
+                <li class="right"><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+                <li class="right"><a href="{{ url_for('register_page') }}">Register</a></li>
+                <li class="right"><a href="{{ url_for('login_page') }}">Login</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    {% with message = get_flashed_messages(with_categories=true) %}
+        {% if message %}
+            {% for category, msg in message %}
+                <div class="alert alert-{{ category }}" id="alert">
+                    <p>{{ msg }}</p>
+                    <button class="close close-{{ category }}" id="close"><p>&times;</p></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% block content %}
+
+    {% endblock %}
+{% block script %} {% endblock %}
+<script src="{{ url_for('static', filename='javascript/alertbar.js') }}"></script>
+</body>
+</html>

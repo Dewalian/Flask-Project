@@ -1,0 +1,30 @@
+form.form {
+    background-color: rgb(202, 202, 202);
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.form h2 {
+    margin: 15px;
+    font-size: 3em;
+}
+
+.form-input {
+    display: block;
+    border: none;
+    margin: 15px;
+    width: 450px;
+    height: 30px;
+}
+
+.form-input:focus {background-color: rgb(226, 226, 226);}
+
+.form-button {
+    background-color: rgb(50, 182, 50);
+    margin-top: 5px;
+}
